@@ -1,3 +1,4 @@
+package Launcher;
 
 /**
  * Main application launcher

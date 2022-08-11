@@ -1,5 +1,6 @@
 package Sudoku;
 
+import Launcher.MainMenu;
 import Sudoku.model.Cell;
 import Sudoku.model.CellPosition;
 import Sudoku.model.Difficulty;
@@ -95,6 +96,16 @@ public class SudokuGameApp extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 rulesCaller = "home"; // -> Rules was called from the 'home' panel, so return to it when done
                 view.getCardLayoutManager().show(view.getContent(), "rules");
+            }
+        });
+        this.view.getHomePanel().getHomeBtn().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                MainMenu mainMenu = new MainMenu();
+                mainMenu.setLocationRelativeTo(null);
+                mainMenu.setVisible(true);
+                dispose();
             }
         });
 

@@ -192,7 +192,6 @@ public class Grid implements Iterable<Cell> {
     private boolean checkColumn(int column, int value) {
         for (Cell[] columnCells : cells) {
             if (value == columnCells[column].getUserValue()) {
-                //System.err.println("CELL col: " + columnCells[column].getPosition() + " conflicts.");
                 return false;
             }
         }

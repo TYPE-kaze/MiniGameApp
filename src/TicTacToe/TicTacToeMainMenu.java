@@ -7,6 +7,8 @@ import java.awt.event.ItemListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
+import Launcher.MainMenu;
+
 public class TicTacToeMainMenu extends JFrame {
     private final static int WIDTH = 1000;
     private final static int HEIGHT = 650;
@@ -81,20 +83,36 @@ public class TicTacToeMainMenu extends JFrame {
         startGamePanel.add(levelSelector);
         left.add(startGamePanel);
 
+        // View Rule Button
         JPanel showRulesPanel = new JPanel();
         showRulesPanel.setLayout(new GridLayout());
         showRulesPanel.setLocation(100, 200);
         showRulesPanel.setSize(300, 120);
-
-        // View Rule Button
         JButton viewRulesBtn = new AppJButton("SHOW ME THE RULES", 20, TicTacToeGameGUI.BKGD_LIGHT_GRAY, TicTacToeGameGUI.APP_GREEN);
         ActionListener viewRule = e -> (new RulesPanel(this)).setVisible(true);
         viewRulesBtn.addActionListener(viewRule);
         showRulesPanel.add(viewRulesBtn);
-
         left.add(showRulesPanel);
 
+        // Return Button
+        JPanel returnPanel = new JPanel();
+        returnPanel.setLayout(new GridLayout());
+        returnPanel.setLocation(100, 350);
+        returnPanel.setSize(300, 60);
+        JButton returnBtn = new AppJButton("RETURN TO MAIN MENU", 20, TicTacToeGameGUI.BKGD_LIGHT_GRAY, TicTacToeGameGUI.APP_GREEN);
+        ActionListener returnToMainMenu = e -> {
+            setVisible(false);
+            MainMenu mainMenu = new MainMenu();
+            mainMenu.setLocationRelativeTo(null);
+            mainMenu.setVisible(true);
+            dispose();
+        };
+        returnBtn.addActionListener(returnToMainMenu);
+        returnPanel.add(returnBtn);
+        left.add(returnPanel);
+
         main.add(left);
+
         // Right Options
         JPanel right = new JPanel();
         right.setBackground(TicTacToeGameGUI.BKGD_DARK_GRAY);

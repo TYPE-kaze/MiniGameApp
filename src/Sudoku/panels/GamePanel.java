@@ -92,7 +92,7 @@ public class GamePanel extends JPanel {
             grid.setPreferredSize(new Dimension(120, 120));
             grid.setMaximumSize(new Dimension(433, 433));
             grid.setBorder(new LineBorder(APP_GREEN, 2));
-            grid.setBackground(BKGD_DARK_GRAY.darker());
+            grid.setBackground(BKGD_DARK_GRAY);
             grid.setForeground(Color.white);
             grid.setLocation(285, 0);
             grid.setSize(400, 400);

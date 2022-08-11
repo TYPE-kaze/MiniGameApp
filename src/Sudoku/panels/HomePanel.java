@@ -17,6 +17,7 @@ public class HomePanel extends JPanel {
     // Home Panel Attributes
     private final JButton newGameBtn;
     private final JButton viewRulesBtn;
+    private final JButton homeBtn;
     private DefaultTableModel tableModel;
     private DefaultComboBoxModel levelSelectionModel = new DefaultComboBoxModel();
     private final JComboBox levelSelector;
@@ -88,6 +89,14 @@ public class HomePanel extends JPanel {
         game.add(viewRulesBtn);
         left.add(game);
 
+        game = new JPanel();
+        game.setLayout(new GridLayout());
+        game.setLocation(100, 350);
+        game.setSize(300, 60);
+        homeBtn = new AppJButton("RETURN TO MAIN MENU", 20, BKGD_LIGHT_GRAY, APP_GREEN);
+        game.add(homeBtn);
+        left.add(game);
+
         main.add(left);
 
 
@@ -113,6 +122,8 @@ public class HomePanel extends JPanel {
     public JButton getViewRulesBtn() {
         return viewRulesBtn;
     }
+
+    public JButton getHomeBtn() { return homeBtn; }
 
     public JLabel getNameLabel() {
         return nameLabel;
